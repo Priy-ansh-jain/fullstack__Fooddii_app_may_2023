@@ -1,0 +1,1 @@
+export {default as LogBack } from "./img/LogBack.png"
