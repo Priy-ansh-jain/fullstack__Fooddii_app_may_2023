@@ -7,10 +7,11 @@ import { CgDanger} from "react-icons/cg"
 import { FcInfo } from 'react-icons/fc'
 
 
-const alert = ({type, message}) => {
+const Alert = ({type, message}) => {
 if(type === "warning"){
   return(
      <motion.div {...fadeInOut} className='fixed z-50 top-32 right-12 px-4 py-2 rounded-md backdrop-blur-sm bg-orange-300 shadow-md flex items-center gap-2'>
+      <FaCheck className='text-xl text-blue-200'/>
       <BsExclamationTriangle className='text-xl text-orange-400'/>
       <p className='text-xl text-orange-700'>{message}</p> 
      </motion.div>
@@ -35,4 +36,4 @@ if(type === "info"){
 
 }
 
-export default alert
+export default Alert

@@ -32,9 +32,11 @@ const Login = () => {
   const dispatch = useDispatch
 
   const user = useSelector((state) => state.user)
+  // here used use selector hook from redux in above line.
   const alertInfo = useSelector((state) => state.alert)
   const alertWarning = useSelector((state) => state.alert)
 
+  // if user is alerady there than we have to navigate user to main page.
   useEffect(() => {
     if (user) {
       navigate("/", { replace: true })

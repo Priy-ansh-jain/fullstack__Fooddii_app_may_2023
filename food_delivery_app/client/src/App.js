@@ -15,7 +15,7 @@ import { Alert } from "./components";
 const App = () => {
   const firebaseAuth = getAuth(app);
   const [isLoading, setIsLoading] = useState(false);
-  const alert =useSelector(state => state.alert)
+  const alert = useSelector((state) => state.alert);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -30,19 +30,19 @@ const App = () => {
       }
       setInterval(() => {
         setIsLoading(false);
-      }, 30);
+      }, 3000);
     });
   }, [firebaseAuth, dispatch]);
 
   return (
     // 'text-red-500 w-screen min-h-screen h-auto flex flex-col items-center justify-center'
-    <div className="">
+    <div className="w-screen min-h-screen h-auto flex flex-col items-center justify-center">
       {isLoading && (
         <motion.div
           {...fadeInOut}
           className="fixed z-50 inset-0 bg-stone-100 bacground-blur-md flex items-center justify-center text-blue-800 w-full"
         >
-          <MainLoader />
+          <MainLoader/>
         </motion.div>
       )}
       <Routes>
@@ -50,7 +50,7 @@ const App = () => {
         <Route path="/Login" element={<Login />}></Route>
       </Routes>
 
-      {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
+      {Alert?.type && <Alert type={alert?.type} message={alert?.message} />}
     </div>
   );
 };
